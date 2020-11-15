@@ -1,0 +1,17 @@
+header {
+  background: var(--dark);
+  color: var(--white);
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 12px;
+  padding: 16px;
+  width: 100%;
+}
+
+main {
+  height: calc(100% - 140px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+}

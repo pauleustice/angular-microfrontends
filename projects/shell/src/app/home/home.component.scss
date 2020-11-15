@@ -1,0 +1,19 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 6em;
+  text-align: center;
+}
+
+p {
+  color: chartreuse;
+}
+
+nav {
+  justify-content: flex-end;
+}

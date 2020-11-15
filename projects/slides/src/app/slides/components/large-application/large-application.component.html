@@ -1,0 +1,65 @@
+<div class="content" role="main">
+  <div class="card card--headed">
+    <div class="header">A hypothetical example</div>
+
+    <img src="/assets/images/applecom.png" alt="Apple website">
+
+    <div class="toggles">
+      <button class="toggles__button card card--mini" (click)="this.example = 0" [class.active]="this.example === 0">
+        Monolithic app
+      </button>
+      <button class="toggles__button card card--mini" (click)="this.example = 1" [class.active]="this.example === 1">
+        Multiple apps
+      </button>
+    </div>
+
+    <div class="examples">
+      <div class="example" *ngIf="example === 0">
+        <p>The entire application is one entity. It is developed, hosted and deployed as one.</p>
+
+        <div class="diagram">
+          <div class="diagram__app diagram__app--full">
+            <h2>apple.com</h2>
+            <div class="diagram__dependency">Angular</div>
+            <div class="diagram__dependency">NgRx</div>
+            <div class="diagram__dependency">RxJS</div>
+            <div class="diagram__dependency">etc</div>
+          </div>
+        </div>
+      </div>
+      <div class="example" *ngIf="example === 1">
+        <p>The website is composed of multiple applications that holistically form apple.com</p>
+        <p>By splitting an app into its constituent parts, there are dedicated teams to each section giving a sense of
+          clarity and ownership, but dependencies are not shared and each page has to send a lot of data down
+          the wire.</p>
+
+        <div class="diagram">
+          <div class="diagram__app diagram__app--full">
+            <h2>apple.com</h2>
+          </div>
+          <div class="diagram__app">
+            <h2>Mac product team</h2>
+            <div class="diagram__dependency">Angular</div>
+            <div class="diagram__dependency">NgRx</div>
+            <div class="diagram__dependency">RxJS</div>
+            <div class="diagram__dependency">etc</div>
+          </div>
+          <div class="diagram__app">
+            <h2>iPad product team</h2>
+            <div class="diagram__dependency">Angular</div>
+            <div class="diagram__dependency">NgRx</div>
+            <div class="diagram__dependency">RxJS</div>
+            <div class="diagram__dependency">etc</div>
+          </div>
+          <div class="diagram__app">
+            <h2>iPhone product team</h2>
+            <div class="diagram__dependency">Angular</div>
+            <div class="diagram__dependency">NgRx</div>
+            <div class="diagram__dependency">RxJS</div>
+            <div class="diagram__dependency">etc</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

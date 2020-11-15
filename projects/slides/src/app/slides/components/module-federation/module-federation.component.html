@@ -1,0 +1,27 @@
+<div class="content" role="main">
+  <div class="card card--headed">
+    <div class="header">Overview</div>
+    <ul>
+      <li>New in Webpack 5</li>
+      <li>Allows remotely deployed applications to work together to form a holistic application</li>
+      <li>...by sharing their inner modules to consumers</li>
+      <li>Federated modules can define shared dependencies, to avoid downloading large libraries multiple times</li>
+      <li>Each consumed module can also consume other federated modules</li>
+    </ul>
+  </div>
+  <div class="card card--headed">
+    <div class="header">Federation?</div>
+    <blockquote>“Federation in a general sense, refers to a union of partially self-governing entities sitting under a central governor.”</blockquote>
+
+    <div class="diagram">
+      <div class="diagram__host">Host application</div>
+      <div class="diagram__remotes">
+        <div class="diagram__remote">Remote 1</div>
+        <div class="diagram__remote">Remote 2</div>
+        <div class="diagram__remote">etc</div>
+      </div>
+    </div>
+
+    <p>Module Federation, then, can be seen as a central application (the host) that can load other modules (remote entities). Federated modules are deployed remotely, and independent of the host, but can be loaded dynamically into any another application as long as it supports it.</p>
+  </div>
+</div>

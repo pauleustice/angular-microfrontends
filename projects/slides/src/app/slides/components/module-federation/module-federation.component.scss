@@ -1,0 +1,71 @@
+@import 'placeholders';
+
+:host {
+  @extend %slide;
+}
+
+blockquote {
+  border-left: 3px solid #000;
+  padding: 0.5rem 0 0.5rem 2rem;
+}
+
+.diagram {
+  --remote-height: 75px;
+
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  margin: 48px auto;
+  text-align: center;
+
+  &__host {
+    background: #1e1e1e;
+    border-radius: .3rem;
+    box-sizing: border-box;
+    color: #fafafa;
+    flex: 1 0 100%;
+    margin: 0 0 2rem;
+    padding: 1rem;
+  }
+
+  &__remotes {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  &__remote {
+    background: var(--blue);
+    border-radius: 50%;
+    color: #fafafa;
+    flex: 0 0 var(--remote-height);
+    font-size: 0.75rem;
+    height: var(--remote-height);
+    line-height: var(--remote-height);
+    position: relative;
+    width: var(--remote-height);
+
+    &:before {
+      background: var(--blue);
+      content: '';
+      height: 45px;
+      left: calc(var(--remote-height) / 2);
+      position: absolute;
+      top: -40px;
+      width: 1px;
+    }
+
+    &:first-child {
+      &:before {
+        transform: rotate(10deg);
+      }
+    }
+
+    &:last-child {
+      &:before {
+        transform: rotate(-10deg);
+      }
+    }
+  }
+}
+

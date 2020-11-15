@@ -1,0 +1,94 @@
+@import 'placeholders';
+
+:host {
+  @extend %slide;
+}
+
+img {
+  border-radius: 4px;
+  box-shadow: 0 4px 12px 13px rgb(105 105 105 / 10%);
+  height: 441px;
+  margin: 12px auto;
+  width: 650px;
+}
+
+.diagram {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  justify-content: space-around;
+  margin: 48px auto 0;
+  text-align: center;
+  width: 100%;
+
+  h2 {
+    flex: 1 0 100%;
+
+    &:only-child {
+      margin: 0;
+    }
+  }
+
+  &__app {
+    background: var(--blue);
+    border-radius: .3rem;
+    box-sizing: border-box;
+    color: #fafafa;
+    display: flex;
+    flex: 0 30%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0;
+    padding: 1rem;
+
+    &--full {
+      background: var(--dark);
+      flex: 0 90%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__dependency {
+    background: #fafafa;
+    border-radius: .3rem;
+    color: #1e1e1e;
+    flex: 0 auto;
+    font-size: 0.75rem;
+    margin: 8px 0;
+    padding: 4px 8px;
+  }
+}
+
+.toggles {
+  border-bottom: 1px solid var(--grey);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  margin-top: 24px;
+  width: 100%;
+
+  &__button {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    cursor: pointer;
+    flex: 0 0 200px;
+    justify-content: center;
+    margin-right: 12px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &.active {
+      background: var(--blue);
+      color: var(--white);
+    }
+  }
+}
+
+.examples {
+  padding-top: 12px;
+  text-align: center;
+  width: 100%;
+}
