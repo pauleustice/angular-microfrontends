@@ -14,11 +14,31 @@
     <blockquote>“Federation in a general sense, refers to a union of partially self-governing entities sitting under a central governor.”</blockquote>
 
     <div class="diagram">
-      <div class="diagram__host">Host application</div>
+      <div class="diagram__app diagram__app--full">
+        <h2>Host application</h2>
+        <div class="diagram__dependency" [class.activated]="accessingDeps.has('angular')">Angular</div>
+        <div class="diagram__dependency" [class.activated]="accessingDeps.has('ngrx')">NgRx</div>
+        <div class="diagram__dependency" [class.activated]="accessingDeps.has('rxjs')">RxJS</div>
+      </div>
       <div class="diagram__remotes">
-        <div class="diagram__remote">Remote 1</div>
-        <div class="diagram__remote">Remote 2</div>
-        <div class="diagram__remote">etc</div>
+        <div class="diagram__app diagram__app--remote"
+             [class.show-deps]="openRemotes.has(0)" (click)="openRemote(0); accessDeps(['angular'])"
+        >
+          <h3>Remote 1</h3>
+          <div class="diagram__dependency">Angular</div>
+        </div>
+        <div class="diagram__app diagram__app--remote"
+             [class.show-deps]="openRemotes.has(1)" (click)="openRemote(1); accessDeps(['angular', 'ngrx'])">
+          <h3>Remote 2</h3>
+          <div class="diagram__dependency">Angular</div>
+          <div class="diagram__dependency">NgRx</div>
+        </div>
+        <div class="diagram__app diagram__app--remote"
+             [class.show-deps]="openRemotes.has(2)" (click)="openRemote(2); accessDeps(['angular', 'date-fns'])">
+          <h3>Remote 3</h3>
+          <div class="diagram__dependency">Angular</div>
+          <div class="diagram__dependency" [class.activated]="accessingDeps.has('date-fns')">date-fns</div>
+        </div>
       </div>
     </div>
 

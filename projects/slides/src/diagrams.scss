@@ -1,0 +1,99 @@
+@keyframes ACCESSING_DEPENDENCY {
+  0%   { background: var(--blue); color: var(--white) }
+  50% { background: var(--white); color: var(--blue) }
+  100%   { background: var(--blue); color: var(--white) }
+}
+
+.diagram {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  justify-content: space-around;
+  margin: 4rem auto;
+  text-align: center;
+  width: 100%;
+
+  h2, h3 {
+    flex: 1 0 100%;
+
+    &:only-child {
+      margin: 0;
+    }
+  }
+
+  &__app {
+    background: var(--blue);
+    border-radius: .3rem;
+    box-sizing: border-box;
+    color: var(--white);
+    display: flex;
+    flex: 0 30%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0;
+    padding: 1rem;
+    position: relative;
+
+    &--full {
+      background: var(--dark);
+      flex: 0 90%;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &:not(.diagram__app--full) {
+      &:before {
+        background: var(--blue);
+        content: '';
+        height: 45px;
+        left: 50%;
+        position: absolute;
+        top: -40px;
+        width: 1px;
+      }
+
+      &:first-child {
+        &:before {
+          transform: rotate(10deg);
+        }
+      }
+
+      &:last-child {
+        &:before {
+          transform: rotate(-10deg);
+        }
+      }
+
+      .diagram__dependency {
+        display: none;
+      }
+
+      &.show-deps .diagram__dependency {
+        display: flex;
+      }
+    }
+  }
+
+  &__dependency {
+    background: var(--white);
+    border-radius: .3rem;
+    color: var(--dark);
+    flex: 0 auto;
+    font-size: 0.75rem;
+    margin: 8px 0;
+    padding: 4px 8px;
+
+    &.activated {
+      font-weight: bold;
+      animation: ACCESSING_DEPENDENCY 1s infinite ease-in-out;
+    }
+  }
+
+  &__remotes {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+}
