@@ -1,0 +1,43 @@
+<div class="content" role="main">
+  <div class="card card--headed">
+    <div class="header">Configuring the host</div>
+    <app-console>
+      <pre>const ModuleFederationPlugin =</pre>
+      <pre>  require('webpack/lib/container/ModuleFederationPlugin');</pre>
+      <pre>
+
+      </pre>
+      <pre>module.exports = {{ '{' }}</pre>
+      <pre>  output: {{ '{' }}</pre>
+      <pre [class.active]="step === 0">    publicPath: 'http://localhost:5000/',</pre>
+      <pre [class.active]="step === 1">    uniqueName: 'host'</pre>
+      <pre>  },</pre>
+      <pre>  optimization: {{ '{' }}</pre>
+      <pre>    // Only needed to bypass a temporary bug</pre>
+      <pre>    runtimeChunk: false</pre>
+      <pre>  },</pre>
+      <pre>  plugins: [</pre>
+      <pre>    new ModuleFederationPlugin({{ '{' }}</pre>
+      <pre>      remotes: {{ '{' }}</pre>
+      <pre [class.active]="step === 2">        iphone: 'iphone@http://localhost:3000/remoteEntry.js',</pre>
+      <pre>      },</pre>
+      <pre [class.active]="step === 3">      shared: [ '@angular/core', '@angular/common', '@angular/router' ]</pre>
+      <pre>    }),</pre>
+      <pre>  ],</pre>
+      <pre>};</pre>
+    </app-console>
+
+    <app-console>
+      <pre><span class="comment" *ngIf="step === 0">Where the host is hosted</span></pre>
+      <pre><span class="comment" *ngIf="step === 1">A unique name to register the host</span></pre>
+      <pre><span class="comment" *ngIf="step === 2">The registry of remotes and their locations</span></pre>
+      <pre><span class="comment" *ngIf="step === 3">The dependencies we wish to share</span></pre>
+    </app-console>
+
+    <nav class="console-nav">
+      <div class="card card--prev card--mini" (click)="updateStep(-1)">Prev</div>
+      <div class="card card--mini">Step {{ step + 1 }}</div>
+      <div class="card card--next card--mini" (click)="updateStep(1)">Next</div>
+    </nav>
+  </div>
+</div>

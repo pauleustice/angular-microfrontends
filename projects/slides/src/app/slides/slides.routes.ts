@@ -4,6 +4,10 @@ import { ModuleFederationComponent } from './components/module-federation/module
 import { MicrofrontendsComponent } from './components/microfrontends/microfrontends.component';
 import { LargeApplicationComponent } from './components/large-application/large-application.component';
 import { AppComponent } from '../app.component';
+import { ConfiguringYarnComponent } from './components/configuring-yarn/configuring-yarn.component';
+import { ConfiguringRemotesComponent } from './components/configuring-remotes/configuring-remotes.component';
+import { ConfiguringShellComponent } from './components/configuring-shell/configuring-shell.component';
+import { RoutingToRemoteComponent } from './components/routing-to-remote/routing-to-remote.component';
 
 export const SLIDES_ROUTES: Routes = [
   {
@@ -29,6 +33,26 @@ export const SLIDES_ROUTES: Routes = [
         path: 'module-federation',
         component: ModuleFederationComponent,
         data: { title: 'What is Module Federation?' },
+      },
+      {
+        path: 'configuring-yarn',
+        component: ConfiguringYarnComponent,
+        data: { title: 'Configuring yarn' },
+      },
+      {
+        path: 'configuring-remotes',
+        component: ConfiguringRemotesComponent,
+        data: { title: 'Configuring remotes' },
+      },
+      {
+        path: 'configuring-shell',
+        component: ConfiguringShellComponent,
+        data: { title: 'Configuring the shell' },
+      },
+      {
+        path: 'routing-to-remote',
+        component: RoutingToRemoteComponent,
+        data: { title: 'Routing to a remote' },
       },
     ]
   },

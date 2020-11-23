@@ -1,9 +1,9 @@
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
   output: {
-    publicPath: "http://localhost:5000/",
-    uniqueName: "shell"
+    publicPath: 'http://localhost:5000/',
+    uniqueName: 'shell'
   },
   optimization: {
     // Only needed to bypass a temporary bug
@@ -12,9 +12,9 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       remotes: {
-        'slides': "slides@http://localhost:3000/remoteEntry.js",
+        slides: 'slides@http://localhost:3000/remoteEntry.js',
       },
-      shared: [ "@angular/core", "@angular/common", "@angular/router" ],
+      shared: [ '@angular/core', '@angular/common', '@angular/router' ],
     }),
   ],
 };

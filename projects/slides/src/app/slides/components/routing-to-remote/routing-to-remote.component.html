@@ -1,0 +1,30 @@
+<div class="content" role="main">
+  <div class="card card--headed">
+    <div class="header">Routing to a remote</div>
+    <p>Just looks like any other lazy-loaded module!</p>
+
+    <img src="/assets/images/applecom.png" alt="Apple website">
+
+    <app-console>
+      <pre>export const APP_ROUTES: Routes = [</pre>
+      <pre>  {{ '{' }}</pre>
+      <pre>    path: 'iphone',</pre>
+      <pre>    loadChildren:</pre>
+      <pre [class.active]="step === 0">      () => import('iphone/IPhoneMainModule')</pre>
+      <pre [class.active]="step === 1">            .then(m => m.IPhoneMainModule)</pre>
+      <pre>  },</pre>
+      <pre>];</pre>
+    </app-console>
+
+    <app-console>
+      <pre><span class="comment" *ngIf="step === 0">The REMOTE_NAME/EXPOSED_MODULE from remote's config</span></pre>
+      <pre><span class="comment" *ngIf="step === 1">The name of the class exported in the remote module</span></pre>
+    </app-console>
+
+    <nav class="console-nav">
+      <div class="card card--prev card--mini" (click)="updateStep(-1)">Prev</div>
+      <div class="card card--mini">Step {{ step + 1 }}</div>
+      <div class="card card--next card--mini" (click)="updateStep(1)">Next</div>
+    </nav>
+  </div>
+</div>

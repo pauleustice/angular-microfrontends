@@ -8,3 +8,24 @@
   text-align: left;
   width: 100%;
 }
+
+pre {
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  &.active {
+    color: chartreuse;
+
+    &:before {
+      content: '>';
+      left: -25px;
+      position: absolute;
+    }
+  }
+
+  &.comment,
+  .comment {
+    color: #e06969;
+  }
+}
