@@ -19,10 +19,10 @@
       <pre>  plugins: [</pre>
       <pre>    new ModuleFederationPlugin({{ '{' }}</pre>
       <pre [class.active]="step === 1">      name: 'iphone',</pre>
-      <pre [class.active]="step === 1">      library: {{ '{' }} type: 'var', name: 'iphone' },</pre>
-      <pre [class.active]="step === 2">      filename: 'remoteEntry.js',</pre>
-      <pre [class.active]="step === 3">      exposes: {{ '{' }} IPhoneMainModule: './path/from/root/to/iphone.module.ts' },</pre>
-      <pre [class.active]="step === 4">      shared: [ '@angular/core', '@angular/common', '@angular/router' ]</pre>
+      <pre [class.active]="step === 2">      library: {{ '{' }} type: 'var', name: 'iphone' },</pre>
+      <pre [class.active]="step === 3">      filename: 'remoteEntry.js',</pre>
+      <pre [class.active]="step === 4">      exposes: {{ '{' }} IPhoneMainModule: './path/from/root/to/iphone.module.ts' },</pre>
+      <pre [class.active]="step === 5">      shared: [ '@angular/core', '@angular/common', '@angular/router' ]</pre>
       <pre>    }),</pre>
       <pre>  ],</pre>
       <pre>};</pre>
@@ -30,10 +30,11 @@
 
     <app-console>
       <pre><span class="comment" *ngIf="step === 0">Where the remote is hosted</span></pre>
-      <pre><span class="comment" *ngIf="step === 1">A unique name to register the remote</span></pre>
-      <pre><span class="comment" *ngIf="step === 2">The host includes this generated runtime file from the publicPath URL</span></pre>
-      <pre><span class="comment" *ngIf="step === 3">The modules we wish to expose</span></pre>
-      <pre><span class="comment" *ngIf="step === 4">The dependencies we wish to share</span></pre>
+      <pre><span class="comment" *ngIf="step === 1">A unique name to register the remote runtime</span></pre>
+      <pre><span class="comment" *ngIf="step === 2">Creates a global variable for initialising the module manually, not obligatory</span></pre>
+      <pre><span class="comment" *ngIf="step === 3">The host includes this generated runtime file from the publicPath URL</span></pre>
+      <pre><span class="comment" *ngIf="step === 4">The modules we wish to expose</span></pre>
+      <pre><span class="comment" *ngIf="step === 5">The dependencies we wish to share</span></pre>
     </app-console>
 
     <nav class="console-nav">

@@ -9,7 +9,7 @@ import { StepService } from '../../services/step-service';
 })
 export class ConfiguringRemotesComponent implements OnInit {
   step = 0;
-  stepCount = 4;
+  stepCount = 5;
   stepper = this.stepService.stepGenerator(this.stepCount);
 
   constructor(
