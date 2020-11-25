@@ -3,6 +3,9 @@
   --grey: #737373;
   --white: #fafafa;
   --blue: #1976d2;
+  --blue-dark: #125699;
+  --pinkish: #e06969;
+  --hot-green: chartreuse;
 }
 
 body {
@@ -53,7 +56,7 @@ a:hover {
 }
 
 a:hover {
-  color: #125699;
+  color: var(--blue-dark);
 }
 
 .content {
@@ -66,7 +69,7 @@ a:hover {
 
 .card {
   border-radius: 4px;
-  border: 1px solid #eee;
+  border: 1px solid var(--white);
   background-color: var(--white);
   width: 100%;
   margin: 0 8px 16px;
@@ -138,16 +141,39 @@ nav {
   }
 }
 
+.example-screenshot {
+  border-radius: 4px;
+  box-shadow: 0 4px 12px 13px rgb(105 105 105 / 10%);
+  height: 367px;
+  margin: 12px auto;
+  overflow: hidden;
+  width: 650px;
+
+  img {
+    height: 367px;
+    width: 650px;
+  }
+
+  &:hover {
+    img {
+      zoom: 2;
+      left: -50%;
+      position: relative;
+    }
+  }
+}
+
+// Console styles
+
 pre {
   margin: 0;
   padding: 0;
   position: relative;
 
   &.active {
-    color: chartreuse;
+    color: var(--hot-green);
 
     &:before {
-      //color: chartreuse;
       content: '>';
       left: -25px;
       position: absolute;
@@ -156,8 +182,13 @@ pre {
 
   &.comment,
   .comment {
-    color: #e06969;
+    color: var(--pinkish);
   }
+}
+
+.file-name {
+  color: var(--pinkish);
+  transform: translateY(-16px);
 }
 
 .console-nav {

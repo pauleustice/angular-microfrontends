@@ -1,31 +1,10 @@
 :host {
-  background-color: #1e1e1e;
+  background-color: var(--dark);
   border-radius: 5px;
   box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
-  color: #efefef;
+  color: var(--white);
   margin-bottom: 10px;
   padding: 32px;
   text-align: left;
   width: 100%;
-}
-
-pre {
-  margin: 0;
-  padding: 0;
-  position: relative;
-
-  &.active {
-    color: chartreuse;
-
-    &:before {
-      content: '>';
-      left: -25px;
-      position: absolute;
-    }
-  }
-
-  &.comment,
-  .comment {
-    color: #e06969;
-  }
 }
