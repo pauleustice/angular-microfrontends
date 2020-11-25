@@ -1,0 +1,34 @@
+<div class="content" role="main">
+  <div class="card card--headed">
+    <div class="header">One last thing</div>
+    <ul>
+      <li>Shared modules load asynchronously now</li>
+      <li>...so the application bootstrapping must too</li>
+    </ul>
+    <app-console>
+      <div class="file-name">bootstrap.ts</div>
+      <pre>import {{ '{' }} platformBrowserDynamic } from '@angular/platform-browser-dynamic';</pre>
+      <pre>import {{ '{' }} enableProdMode } from '@angular/core';</pre>
+      <pre>
+
+      </pre>
+      <pre>import {{ '{' }} AppModule } from './app/app.module';</pre>
+      <pre>import {{ '{' }} environment } from './environments/environment';</pre>
+      <pre>
+
+      </pre>
+      <pre>if (environment.production) {{ '{' }}</pre>
+      <pre>  enableProdMode();</pre>
+      <pre>}</pre>
+      <pre>
+
+      </pre>
+      <pre>platformBrowserDynamic().bootstrapModule(AppModule)</pre>
+      <pre>  .catch(err => console.error(err));</pre>
+    </app-console>
+    <app-console>
+      <div class="file-name">main.ts</div>
+      <pre>import('./bootstrap');</pre>
+    </app-console>
+  </div>
+</div>

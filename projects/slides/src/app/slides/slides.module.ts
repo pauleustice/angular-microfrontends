@@ -12,6 +12,7 @@ import { AppComponent } from '../app.component';
 import { ConfiguringRemotesComponent } from './components/configuring-remotes/configuring-remotes.component';
 import { ConfiguringShellComponent } from './components/configuring-shell/configuring-shell.component';
 import { RoutingToRemoteComponent } from './components/routing-to-remote/routing-to-remote.component';
+import { AsyncBootstrapComponent } from './components/async-bootstrap/async-bootstrap.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { RoutingToRemoteComponent } from './components/routing-to-remote/routing
     ConfiguringRemotesComponent,
     ConfiguringShellComponent,
     RoutingToRemoteComponent,
+    AsyncBootstrapComponent,
   ],
   bootstrap: [
     AppComponent,

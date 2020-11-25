@@ -8,6 +8,7 @@ import { ConfiguringYarnComponent } from './components/configuring-yarn/configur
 import { ConfiguringRemotesComponent } from './components/configuring-remotes/configuring-remotes.component';
 import { ConfiguringShellComponent } from './components/configuring-shell/configuring-shell.component';
 import { RoutingToRemoteComponent } from './components/routing-to-remote/routing-to-remote.component';
+import { AsyncBootstrapComponent } from './components/async-bootstrap/async-bootstrap.component';
 
 export const SLIDES_ROUTES: Routes = [
   {
@@ -53,6 +54,11 @@ export const SLIDES_ROUTES: Routes = [
         path: 'routing-to-remote',
         component: RoutingToRemoteComponent,
         data: { title: 'Routing to a remote' },
+      },
+      {
+        path: 'async-bootstrap',
+        component: AsyncBootstrapComponent,
+        data: { title: 'Bootstrap asynchronously' },
       },
     ]
   },
