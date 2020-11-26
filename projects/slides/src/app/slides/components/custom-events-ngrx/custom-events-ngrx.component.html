@@ -1,0 +1,36 @@
+<div class="content" role="main">
+  <div class="card card--headed">
+    <div class="header">Custom events</div>
+    <ul>
+      <li>The most basic form of communication</li>
+      <li>Not suitable for enterprise or large applications</li>
+    </ul>
+    <app-console>
+      <div class="file-name">Host (or consuming remote)</div>
+      <pre>window.addEventListener('updateTitle', (e: CustomEvent) => {{ '{' }}</pre>
+      <pre>  this.title = e.detail.title;</pre>
+      <pre>});</pre>
+    </app-console>
+
+    <app-console>
+      <div class="file-name">Remote</div>
+      <pre>window.dispatchEvent(</pre>
+      <pre>  new CustomEvent('updateTitle', {{ '{' }}</pre>
+      <pre>    detail: {{ '{' }}</pre>
+      <pre>      title: 'iPhone',</pre>
+      <pre>    },</pre>
+      <pre>  }),</pre>
+      <pre>);</pre>
+    </app-console>
+  </div>
+  <div class="card card--headed">
+    <div class="header">NgRx</div>
+    <ul>
+      <li>Used in this repo!</li>
+      <li>You'll need a shared library within the monorepo to use exported actions</li>
+    </ul>
+    <app-console>
+      <pre>this.store.dispatch({{ '{' }} type: '[UI] Update Title', title: 'iPhone' });</pre>
+    </app-console>
+  </div>
+</div>

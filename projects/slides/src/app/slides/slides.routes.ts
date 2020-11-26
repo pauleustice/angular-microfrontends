@@ -9,6 +9,9 @@ import { ConfiguringRemotesComponent } from './components/configuring-remotes/co
 import { ConfiguringShellComponent } from './components/configuring-shell/configuring-shell.component';
 import { RoutingToRemoteComponent } from './components/routing-to-remote/routing-to-remote.component';
 import { AsyncBootstrapComponent } from './components/async-bootstrap/async-bootstrap.component';
+import { InterModuleCommunicationComponent } from './components/communication/inter-module-communication.component';
+import { CodingItComponent } from './components/coding-it/coding-it.component';
+import { CustomEventsNgrxComponent } from './components/custom-events-ngrx/custom-events-ngrx.component';
 
 export const SLIDES_ROUTES: Routes = [
   {
@@ -36,6 +39,11 @@ export const SLIDES_ROUTES: Routes = [
         data: { title: 'What is Module Federation?' },
       },
       {
+        path: 'coding-it',
+        component: CodingItComponent,
+        data: { title: 'Coding it' },
+      },
+      {
         path: 'configuring-yarn',
         component: ConfiguringYarnComponent,
         data: { title: 'Configuring yarn' },
@@ -59,6 +67,16 @@ export const SLIDES_ROUTES: Routes = [
         path: 'async-bootstrap',
         component: AsyncBootstrapComponent,
         data: { title: 'Bootstrap asynchronously' },
+      },
+      {
+        path: 'communication',
+        component: InterModuleCommunicationComponent,
+        data: { title: 'Inter-module communication' },
+      },
+      {
+        path: 'custom-events-ngrx',
+        component: CustomEventsNgrxComponent,
+        data: { title: 'Pub/sub and NgRx' },
       },
     ]
   },

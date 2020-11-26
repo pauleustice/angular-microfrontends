@@ -13,6 +13,9 @@ import { ConfiguringRemotesComponent } from './components/configuring-remotes/co
 import { ConfiguringShellComponent } from './components/configuring-shell/configuring-shell.component';
 import { RoutingToRemoteComponent } from './components/routing-to-remote/routing-to-remote.component';
 import { AsyncBootstrapComponent } from './components/async-bootstrap/async-bootstrap.component';
+import { InterModuleCommunicationComponent } from './components/communication/inter-module-communication.component';
+import { CodingItComponent } from './components/coding-it/coding-it.component';
+import { CustomEventsNgrxComponent } from './components/custom-events-ngrx/custom-events-ngrx.component';
 
 @NgModule({
   imports: [
@@ -30,6 +33,9 @@ import { AsyncBootstrapComponent } from './components/async-bootstrap/async-boot
     ConfiguringShellComponent,
     RoutingToRemoteComponent,
     AsyncBootstrapComponent,
+    InterModuleCommunicationComponent,
+    CodingItComponent,
+    CustomEventsNgrxComponent,
   ],
   bootstrap: [
     AppComponent,
