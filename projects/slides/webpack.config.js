@@ -15,7 +15,7 @@ module.exports = {
       exposes: {
         './Module': './projects/slides/src/app/slides/slides.module.ts',
       },
-      shared: [ '@angular/core', '@angular/common', '@angular/router' ],
+      shared: [ '@angular/core', '@angular/common', '@angular/router', '@ngrx/store' ],
     }),
   ],
 };

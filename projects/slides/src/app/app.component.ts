@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router, Routes } from '@angular/router';
 
 import { Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 import { SLIDES_ROUTES } from './slides/slides.routes';
 
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
+    private store: Store,
   ) {}
 
   get prevSlide() {
@@ -33,13 +35,7 @@ export class AppComponent implements OnInit, OnDestroy {
         const url = event.url.replace('/slides/', '');
         const route = this.allSlides.find(r => r.path === url);
 
-        window.dispatchEvent(
-          new CustomEvent("updateSlideTitle", {
-            detail: {
-              title: route.data.title,
-            },
-          }),
-        );
+        this.store.dispatch({ type: '[UI] Update Title', title: route.data.title });
 
         if (route) {
           this.slide = this.allSlides.indexOf(route);

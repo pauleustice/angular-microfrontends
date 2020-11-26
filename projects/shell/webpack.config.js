@@ -13,7 +13,7 @@ module.exports = {
       remotes: {
         slides: 'slides@http://localhost:3000/remoteEntry.js',
       },
-      shared: [ '@angular/core', '@angular/common', '@angular/router' ],
+      shared: [ '@angular/core', '@angular/common', '@angular/router', '@ngrx/store' ],
     }),
   ],
 };

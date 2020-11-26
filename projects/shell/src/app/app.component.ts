@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { selectTitle } from './store/ui.selectors';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.scss' ],
 })
 export class AppComponent {
-  currentSlide = 'Micro-frontends in Angular';
+  currentSlide$: Observable<string> = this.store.select(selectTitle);
 
-  constructor() {
-    window.addEventListener('updateSlideTitle', (e: CustomEvent) => {
-      this.currentSlide = e.detail.title;
-    });
-  }
+  constructor(
+    private store: Store,
+  ) {}
 }
 

@@ -1,5 +1,5 @@
 <header>
-  <span class="current-slide">{{ currentSlide }}</span>
+  <span class="current-slide">{{ currentSlide$ | async }}</span>
 </header>
 <main class="container">
   <router-outlet></router-outlet>
