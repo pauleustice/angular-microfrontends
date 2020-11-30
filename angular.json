@@ -89,45 +89,15 @@
             "browserTarget": "slides:build"
           }
         },
-        "test": {
-          "builder": "ngx-build-plus:karma",
-          "options": {
-            "main": "projects/slides/src/test.ts",
-            "polyfills": "projects/slides/src/polyfills.ts",
-            "tsConfig": "projects/slides/tsconfig.spec.json",
-            "karmaConfig": "projects/slides/karma.conf.js",
-            "assets": [
-              "projects/slides/src/favicon.ico",
-              "projects/slides/src/assets"
-            ],
-            "styles": [],
-            "scripts": [],
-            "extraWebpackConfig": "projects/slides/webpack.config.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/slides/tsconfig.app.json",
-              "projects/slides/tsconfig.spec.json",
-              "projects/slides/e2e/tsconfig.json"
+              "projects/slides/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/slides/e2e/protractor.conf.js",
-            "devServerTarget": "slides:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "slides:serve:production"
-            }
           }
         }
       }
@@ -213,45 +183,15 @@
             "browserTarget": "host:build"
           }
         },
-        "test": {
-          "builder": "ngx-build-plus:karma",
-          "options": {
-            "main": "projects/host/src/test.ts",
-            "polyfills": "projects/host/src/polyfills.ts",
-            "tsConfig": "projects/host/tsconfig.spec.json",
-            "karmaConfig": "projects/host/karma.conf.js",
-            "assets": [
-              "projects/host/src/favicon.ico",
-              "projects/host/src/assets"
-            ],
-            "styles": [],
-            "scripts": [],
-            "extraWebpackConfig": "projects/host/webpack.config.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/host/tsconfig.app.json",
-              "projects/host/tsconfig.spec.json",
-              "projects/host/e2e/tsconfig.json"
+              "projects/host/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/host/e2e/protractor.conf.js",
-            "devServerTarget": "host:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "host:serve:production"
-            }
           }
         }
       }

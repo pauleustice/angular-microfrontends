@@ -20,7 +20,7 @@ export class RoutingToRemoteComponent implements OnInit {
     this.stepper.next();
   }
 
-  updateStep(direction: number) {
+  updateStep(direction: number): void {
     const { value: step = 0 } = this.stepper.next(direction);
     this.step = step;
   }

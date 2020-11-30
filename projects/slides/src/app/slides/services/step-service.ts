@@ -7,7 +7,7 @@ export class StepService {
 
   constructor() { }
 
-  *stepGenerator(stepCount) {
+  *stepGenerator(stepCount): Generator<number> {
     let i = 0;
 
     while (i < stepCount + 1) {

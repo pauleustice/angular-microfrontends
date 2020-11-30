@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router, Routes } from '@angular/router';
+import { NavigationEnd, Route, Router, Routes } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -21,15 +21,15 @@ export class AppComponent implements OnInit, OnDestroy {
     private store: Store,
   ) {}
 
-  get prevSlide() {
+  get prevSlide(): Route {
     return this.slide > 0 ? this.allSlides[this.slide - 1] : null;
   }
 
-  get nextSlide() {
+  get nextSlide(): Route {
     return this.slide < this.allSlides.length ? this.allSlides[this.slide + 1] : null;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sub = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const url = event.url.replace('/slides/', '');
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 }
