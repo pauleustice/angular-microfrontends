@@ -12,6 +12,10 @@ import { AsyncBootstrapComponent } from './components/async-bootstrap/async-boot
 import { InterModuleCommunicationComponent } from './components/communication/inter-module-communication.component';
 import { CodingItComponent } from './components/coding-it/coding-it.component';
 import { CustomEventsNgrxComponent } from './components/custom-events-ngrx/custom-events-ngrx.component';
+import { DependencyVersionsComponent } from './components/dependency-versions/dependency-versions.component';
+import { DependencyMismatchesComponent } from './components/dependency-mismatches/dependency-mismatches.component';
+import { DependenciesComponent } from './components/dependencies/dependencies.component';
+import { UsefulResourcesComponent } from './components/useful-resources/useful-resources.component';
 
 export const SLIDES_ROUTES: Routes = [
   {
@@ -69,6 +73,21 @@ export const SLIDES_ROUTES: Routes = [
         data: { title: 'Bootstrap asynchronously' },
       },
       {
+        path: 'dependencies',
+        component: DependenciesComponent,
+        data: { title: 'Dependencies' },
+      },
+      {
+        path: 'dependency-versions',
+        component: DependencyVersionsComponent,
+        data: { title: 'Dependency versions' },
+      },
+      {
+        path: 'dependency-mismatches',
+        component: DependencyMismatchesComponent,
+        data: { title: 'Dependency mismatches' },
+      },
+      {
         path: 'communication',
         component: InterModuleCommunicationComponent,
         data: { title: 'Inter-module communication' },
@@ -77,6 +96,11 @@ export const SLIDES_ROUTES: Routes = [
         path: 'custom-events-ngrx',
         component: CustomEventsNgrxComponent,
         data: { title: 'Pub/sub and NgRx' },
+      },
+      {
+        path: 'useful-resources',
+        component: UsefulResourcesComponent,
+        data: { title: 'Useful resources' },
       },
     ]
   },

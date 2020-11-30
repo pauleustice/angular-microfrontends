@@ -1,0 +1,39 @@
+<div class="content" role="main">
+  <div class="card card--headed">
+    <div class="header">Dependency versions</div>
+
+    <p>Keeping it in check:</p>
+    <ul>
+      <li>Monorepos - singular package.json</li>
+      <li>Webpack will use semantic version matching</li>
+    </ul>
+
+    <app-console>
+      <div class="file-name">webpack.config.js</div>
+      <pre>shared: [ '@angular/core', '@angular/common', '@angular/router' ]</pre>
+    </app-console>
+
+    <p>Be mindful of your package.json versioning</p>
+
+    <app-console>
+      <div class="file-name">package.json</div>
+      <pre>{{ '{' }}</pre>
+      <pre>  dependencies: {{ '{' }}</pre>
+      <pre [class.active]="step === 0">    "@ngrx/store": "^10.0.1"</pre>
+      <pre [class.active]="step === 1">    "rxjs": "~6.6.0",</pre>
+      <pre>  }</pre>
+      <pre>}</pre>
+    </app-console>
+
+    <app-console>
+      <pre><span class="comment" *ngIf="step === 0">^ supports minor and patch updates</span></pre>
+      <pre><span class="comment" *ngIf="step === 1">~ supports patch updates</span></pre>
+    </app-console>
+
+    <nav class="console-nav">
+      <div class="card card--prev card--mini" (click)="updateStep(-1)">Prev</div>
+      <div class="card card--mini">Step {{ step + 1 }}</div>
+      <div class="card card--next card--mini" (click)="updateStep(1)">Next</div>
+    </nav>
+  </div>
+</div>

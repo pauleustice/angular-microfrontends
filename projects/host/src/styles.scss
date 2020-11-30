@@ -38,6 +38,14 @@ h6 {
 
 p {
   margin: 0 0 32px;
+
+  & + ul {
+    margin-top: -10px;
+  }
+
+  app-console + & {
+    margin-top: 32px;
+  }
 }
 
 code {

@@ -1,0 +1,36 @@
+<div class="content" role="main">
+  <div class="card card--headed">
+    <div class="header">Dependency mismatches</div>
+
+    <p>Incongruous versions:</p>
+    <ul>
+      <li>can lead to multiple versions being downloaded</li>
+      <li>...but this behaviour can be overridden</li>
+      <li>...and can throw errors if you wish</li>
+      <li>A contract between teams</li>
+    </ul>
+
+    <app-console>
+      <div class="file-name">remote/src/webpack.config.js</div>
+      <pre>shared: {{ '{' }}</pre>
+      <pre>  '@ngrx/store': {{ '{' }}</pre>
+      <pre [class.active]="step === 0">    singleton: true,</pre>
+      <pre [class.active]="step === 1">    strictVersion: true,</pre>
+      <pre [class.active]="step === 2">    requiredVersion: ">=9.0.0 <9.9.0"</pre>
+      <pre>  }</pre>
+      <pre>}</pre>
+    </app-console>
+
+    <app-console>
+      <pre><span class="comment" *ngIf="step === 0">State that we don't want multiple versions downloaded</span></pre>
+      <pre><span class="comment" *ngIf="step === 1">Throw an error if there's a mismatch</span></pre>
+      <pre><span class="comment" *ngIf="step === 2">Specify a version range</span></pre>
+    </app-console>
+
+    <nav class="console-nav">
+      <div class="card card--prev card--mini" (click)="updateStep(-1)">Prev</div>
+      <div class="card card--mini">Step {{ step + 1 }}</div>
+      <div class="card card--next card--mini" (click)="updateStep(1)">Next</div>
+    </nav>
+  </div>
+</div>
