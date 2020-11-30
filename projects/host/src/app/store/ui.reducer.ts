@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 
-import * as ShellActions from './ui.actions';
+import * as HostActions from './ui.actions';
 
 export interface UiState {
   title: string;
@@ -12,5 +12,5 @@ export const initialState: UiState = {
 
 export const uiReducer = createReducer(
   initialState,
-  on(ShellActions.updateTitle, (state, { title }) => ({ ...state, title }))
+  on(HostActions.updateTitle, (state, { title }) => ({ ...state, title }))
 );

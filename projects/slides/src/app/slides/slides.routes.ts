@@ -6,7 +6,7 @@ import { LargeApplicationComponent } from './components/large-application/large-
 import { AppComponent } from '../app.component';
 import { ConfiguringYarnComponent } from './components/configuring-yarn/configuring-yarn.component';
 import { ConfiguringRemotesComponent } from './components/configuring-remotes/configuring-remotes.component';
-import { ConfiguringShellComponent } from './components/configuring-shell/configuring-shell.component';
+import { ConfiguringHostComponent } from './components/configuring-host/configuring-host.component';
 import { RoutingToRemoteComponent } from './components/routing-to-remote/routing-to-remote.component';
 import { AsyncBootstrapComponent } from './components/async-bootstrap/async-bootstrap.component';
 import { InterModuleCommunicationComponent } from './components/communication/inter-module-communication.component';
@@ -54,9 +54,9 @@ export const SLIDES_ROUTES: Routes = [
         data: { title: 'Configuring remotes' },
       },
       {
-        path: 'configuring-shell',
-        component: ConfiguringShellComponent,
-        data: { title: 'Configuring the shell' },
+        path: 'configuring-host',
+        component: ConfiguringHostComponent,
+        data: { title: 'Configuring the host' },
       },
       {
         path: 'routing-to-remote',

@@ -3,7 +3,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 module.exports = {
   output: {
     publicPath: 'http://localhost:5000/',
-    uniqueName: 'shell',
+    uniqueName: 'host',
   },
   optimization: {
     runtimeChunk: false,

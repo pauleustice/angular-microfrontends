@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { StepService } from '../../services/step-service';
 
 @Component({
-  selector: 'app-configuring-shell',
-  templateUrl: './configuring-shell.component.html',
-  styleUrls: [ './configuring-shell.component.scss' ],
+  selector: 'app-configuring-host',
+  templateUrl: './configuring-host.component.html',
+  styleUrls: [ './configuring-host.component.scss' ],
 })
-export class ConfiguringShellComponent implements OnInit {
+export class ConfiguringHostComponent implements OnInit {
   step = 0;
   stepCount = 3;
   stepper = this.stepService.stepGenerator(this.stepCount);

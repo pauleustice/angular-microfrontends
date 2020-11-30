@@ -10,7 +10,7 @@ import { LargeApplicationComponent } from './components/large-application/large-
 import { ConfiguringYarnComponent } from './components/configuring-yarn/configuring-yarn.component';
 import { AppComponent } from '../app.component';
 import { ConfiguringRemotesComponent } from './components/configuring-remotes/configuring-remotes.component';
-import { ConfiguringShellComponent } from './components/configuring-shell/configuring-shell.component';
+import { ConfiguringHostComponent } from './components/configuring-host/configuring-host.component';
 import { RoutingToRemoteComponent } from './components/routing-to-remote/routing-to-remote.component';
 import { AsyncBootstrapComponent } from './components/async-bootstrap/async-bootstrap.component';
 import { InterModuleCommunicationComponent } from './components/communication/inter-module-communication.component';
@@ -30,7 +30,7 @@ import { CustomEventsNgrxComponent } from './components/custom-events-ngrx/custo
     ModuleFederationComponent,
     ConfiguringYarnComponent,
     ConfiguringRemotesComponent,
-    ConfiguringShellComponent,
+    ConfiguringHostComponent,
     RoutingToRemoteComponent,
     AsyncBootstrapComponent,
     InterModuleCommunicationComponent,

@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:shell": "ng serve shell  -o --port 5000",
+    "start:host": "ng serve host  -o --port 5000",
     "start:slides": "ng serve slides --port 3000",
-    "build:shell": "ng build shell --prod",
+    "build:host": "ng build host --prod",
     "build:slides": "ng build slides --prod",
-    "serve:dist": "concurrently \"serve dist/shell -l 5000 -s\" \"serve dist/slides -l 3000 -s\" ",
-    "start": "concurrently \"npm run start:shell\" \"npm run start:slides\" ",
-    "build": "npm run build:shell && npm run build:slides",
+    "serve:dist": "concurrently \"serve dist/host -l 5000 -s\" \"serve dist/slides -l 3000 -s\" ",
+    "start": "concurrently \"npm run start:host\" \"npm run start:slides\" ",
+    "build": "npm run build:host && npm run build:slides",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
