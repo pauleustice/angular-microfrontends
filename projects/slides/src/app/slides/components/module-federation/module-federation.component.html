@@ -16,9 +16,15 @@
     <div class="diagram">
       <div class="diagram__app diagram__app--full">
         <h2>Host application</h2>
-        <div class="diagram__dependency" [class.activated]="accessingDeps.has('angular')">Angular</div>
-        <div class="diagram__dependency" [class.activated]="accessingDeps.has('ngrx')">NgRx</div>
-        <div class="diagram__dependency" [class.activated]="accessingDeps.has('rxjs')">RxJS</div>
+        <div class="diagram__dependency"
+             [class.activated]="accessingDeps.has('angular')">Angular
+          <img class="spinner" src="/assets/images/spinner.svg"></div>
+        <div class="diagram__dependency"
+             [class.activated]="accessingDeps.has('ngrx')">NgRx
+          <img class="spinner" src="/assets/images/spinner.svg"></div>
+        <div class="diagram__dependency"
+             [class.activated]="accessingDeps.has('rxjs')">RxJS
+          <img class="spinner" src="/assets/images/spinner.svg"></div>
       </div>
       <div class="diagram__remotes">
         <div class="diagram__app diagram__app--remote"
@@ -37,7 +43,8 @@
              [class.show-deps]="openRemotes.has(2)" (click)="openRemote(2); accessDeps(['angular', 'date-fns'])">
           <h3>Remote 3</h3>
           <div class="diagram__dependency">Angular</div>
-          <div class="diagram__dependency" [class.activated]="accessingDeps.has('date-fns')">date-fns</div>
+          <div class="diagram__dependency" [class.activated]="accessingDeps.has('date-fns')">date-fns
+            <img class="spinner" src="/assets/images/spinner.svg"></div>
         </div>
       </div>
     </div>

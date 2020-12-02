@@ -81,13 +81,24 @@
     border-radius: .3rem;
     color: var(--dark);
     flex: 0 auto;
+    flex-wrap: wrap;
     font-size: 0.75rem;
+    justify-content: center;
     margin: 8px 0;
     padding: 4px 8px;
 
+    .spinner {
+      display: none;
+      flex: 0 0 50%;
+    }
+
     &.activated {
-      font-weight: bold;
       animation: ACCESSING_DEPENDENCY 1s infinite ease-in-out;
+      font-weight: bold;
+
+      .spinner {
+        display: block;
+      }
     }
   }
 
